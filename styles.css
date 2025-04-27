@@ -1085,5 +1085,9 @@ footer .icon:hover {
         font-size: 0.8em;
         padding: 0.75em;
     }
+    .our-work .title {
+        padding: 0 0.5rem;
+    }
+}
     
   }
