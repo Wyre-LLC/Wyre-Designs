@@ -533,6 +533,9 @@ hr {
             width: fit-content;
         }
     }
+    .column-container {
+        flex-wrap: nowrap;
+    }
 }
 
 
