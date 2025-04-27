@@ -533,9 +533,6 @@ hr {
             width: fit-content;
         }
     }
-    .column-container {
-        flex-wrap: nowrap;
-    }
 }
 
 
@@ -580,7 +577,7 @@ hr {
     display: none;
     flex-direction: row;
     justify-content: center;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
 
     h2 {
         color: #efe8dd;
