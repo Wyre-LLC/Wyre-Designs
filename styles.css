@@ -185,6 +185,9 @@ nav a {
     color: white;
 }
 
+.nav-booking .hamburger div {
+    background: #efe8dd;
+}
 
 nav.scrolled {
     background-color: rgba(255, 255, 255, 0.95);
