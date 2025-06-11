@@ -200,6 +200,9 @@ nav.scrolled {
     .nav-booking a:hover {
         color: #323232;
     }
+    .nav-booking .hamburger div {
+        background: #333;
+    }
 }
 
 .button {
