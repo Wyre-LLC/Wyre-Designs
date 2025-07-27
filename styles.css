@@ -1049,7 +1049,7 @@ footer .icon:hover {
         display: block;
     }
     .main-container {
-        padding: 8em 0 4em 8em 4em;
+        padding: 8em 4em 0 4em;
     }
     .process {
         display: flex;
@@ -1278,22 +1278,28 @@ footer .icon:hover {
 }
 
 @media (max-width: 480px) {
+    .main-container {
+        min-height: none !important;
+    }
     .carousel {
         width: 280px;
         height: 280px;
     }
     .slide {
-        width: 6rem;
+        width: 8rem;
         img {
             border-radius: 6px;
         }
     }
     .hero-text {
-        margin-top: 2em;
+        padding-bottom: 0;
         text-align: center;
     }
     .hero-text img {
         height: 5rem;
+    }
+    .hero-image {
+        padding-top: 0;
     }
     h1 {
         font-size: 3rem;
