@@ -27,6 +27,7 @@
               "@type": "Organization",
               "name": "Wyre LLC",
               "alternateName": "Wyre",
+              "alternateName": "Wyre Designs",
               "url": "https://www.wyrellc.com",
               "logo": "https://www.wyrellc.com/images/branding/wyre-transparent.png",
               "sameAs": [
@@ -56,9 +57,9 @@
                     </div>
                     <div class="button-container">
                         <div class="items-nav">
-                            <a href="#our-work" onclick="opennav()">Our Work</a>
                             <a href="#plans" onclick="opennav()">Plans & Pricing</a>
                             <a href="#services" onclick="opennav()">Services</a>
+                            <!--<a href="our-team.html" onclick="opennav()">Our Team</a>-->
                             <a href="booking.html" class="button" onclick="opennav()">Book a Call</a>
                         </div>
                     </div>
@@ -72,81 +73,72 @@
 
             <div class="main-container">
                 <div class="hero-text fade-slide">
-                    
                     <h1><img src="./images/branding/wyre-transparent.png">your brand with us.</h1>
                     <p>From logos to landing pages, content to code, we help businesses grow in the digital age.</p>
                     <div class="button-container">
-                        <a href="#our-work" class="button clear-button">View Our Past Work</a>
                         <a href="https://gofund.me/07722593" target="_blank" class="button clear-button">Donate</a>
+                        <!--<a href="#our-team" class="button clear-button">Our Team</a>-->
                         <a href="booking.html" class="button">Book a Call</a>
                     </div>
-
                 </div>
                 <div class="hero-image fade-slide">
-                    <img src="./images/cliparts/hero-website.svg">
+                    <div class="carousel">
+                        <div class="slide active"><img src="./images/website-template-examples/eeyore's-rescue.png" alt="Slide 1" /></div>
+                        <div class="slide"><img src="./images/website-template-examples/lilypad.png" alt="Slide 2" /></div>
+                        <div class="slide"><img src="./images/website-template-examples/snapsort.png" alt="Slide 3" /></div>
+                        <div class="slide"><img src="./images/website-template-examples/lilypad.png" alt="Slide 4" /></div>
+                    </div>
+                    <div class="controls">
+                        <a class="active" data-index="1"></a>
+                        <a data-index="2"></a>
+                        <a data-index="3"></a>
+                        <a data-index="4"></a>
+                    </div>
+                </div>
+                <a class="scroll-arrow" href="#intro-process">▼</a>
+            </div>
+
+            <div class="banner" id="summer-banner">
+                    <p>Summer just got better ☀️  —  Elevate your space, Uplift your workflow. Let’s talk deals.</p>
+                    <p class="close-btn" onclick="closeBanner()" style="cursor: pointer; width: min-content;">✕</p>
+            </div>
+
+            <div class="process" id="intro-process">
+                <div class="intro">
+                    <h1>Welcome to Wyre.</h1>
+                    <p>Align your vision. Create with purpose.<br />Go live and grow.</p>
+                </div>
+                <div class="cards">
+                    <div class="card">
+                        <img src="./images/random/plan.png" alt="Plan image">
+                        <div class="card-content">
+                            <h2>Plan.</h2>
+                            <p>Align on your goals, audience, and vision to set a clear direction.</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="./images/random/html.png" alt="Build image">
+                        <div class="card-content">
+                            <h2>Build.</h2>
+                            <p>Design and develop a sleek, responsive site tailored to you.</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="./images/random/launch.png" alt="Launch image">
+                        <div class="card-content">
+                            <h2>Launch.</h2>
+                            <p>Go live confidently with a polished site ready to grow your business.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <div class="process" >
-                <h2 class="fade-slide">Plan. Build. Launch.</h2>
-                <div class="column-container fade-slide" id="column1">
-                    <div class="column">
-                        <h3>Plan</h3>
-                        <p>We start by understanding your goals, audience, and vision. Whether it’s a casual chat or a deep dive, we make sure we’re aligned from the jump.</p>
-                    </div>
-                    <div class="column">
-                        <img src="./images/cliparts/presentation.svg">
-                    </div>
-                </div>
-                <div class="column-container fade-slide" id="column2">
-                    <div class="column">
-                        <img src="./images/cliparts/wireframe.svg">
-                    </div>
-                    <div class="column">
-                        <h3>Build</h3>
-                        <p>Next, we turn your vision into reality with sleek, responsive design and functionality tailored to your needs. You’ll see your ideas take shape, step by step.</p>
-                    </div>
-                </div>
-                <div class="column-container fade-slide" id="column3">
-                    <div class="column">
-                        <h3>Launch</h3>
-                        <p>Once you love the final product, we launch your site and help you go live with confidence. Your business is online, polished, and ready to grow.</p>
-                    </div>
-                    <div class="column">
-                        <img src="./images/cliparts/paperwork.svg">
-                    </div>
-                </div>
-            </div>
-
-            <div class="our-work" id="our-work">
-                <div class="title fade-slide">
-                    <h2>Our Past Work</h2>
-                    <p>Want to see what we can do? Browse our featured work and discover how we bring ideas to life.</p>
-                </div>
-
-                
-
-                <div class="slider-container fade-slide">
-                    <div class="slider">
-                        <div class="slider-item"><img src="./images/website-template-examples/lilypad.png" alt="Work With Us Form"></div>
-                        <div class="slider-item"><img src="./images/website-template-examples/snapsort.png" alt="Fast Messaging Service"></div>
-                        <div class="slider-item"><img src="./images/website-template-examples/eeyore's-rescue.png" alt="Design Portfolio"></div>
-                        <div class="slider-item"><img src="./images/website-template-examples/snapsort.png" alt="Tech Startup"></div>
-                        <div class="slider-item"><img src="./images/website-template-examples/lilypad.png" alt="E-commerce Store"></div>
-                    </div>
-                </div>
-                <div class="navigation fade-slide">
-                    <div>
-                        <button class="prev" onclick="prevSlide()"><img src="./images/icons/previous_arrow_icon.svg"></button>
-                        <button class="next" onclick="nextSlide()"><img src="./images/icons/forward_arrow_icon.svg"></button>
-                    </div>
-                </div>
-            </div>
+            
             <div class="divider" style="transform: scaleY(-1);">
                 <svg viewBox="0 0 500 80" preserveAspectRatio="none">
                   <path d="M0,30 C150,80 350,0 500,30 L500,80 L0,80 Z" fill="white"></path>
                 </svg>
-              </div>
+            </div>
               
             <div class="plans" id="plans">
                 <h2 class="fade-slide">Plans & Pricing<p>Websites, branding, automation, and more — built with purpose and tailored to you.</p></h2>
@@ -239,7 +231,7 @@
                                         </div>
                                     </div>
                                     <div class="plan-detail">
-                                        <a href="#services" onclick="changeContent(2, document.getElementById('elevate-button'))" class="button">View More Details</a>
+                                        <a href="#services" onclick="changeContent(3, document.getElementById('elevate-button'))" class="button">View More Details</a>
                                     </div>
                                 </div>
                             </div>
@@ -525,9 +517,9 @@
                             <img src="./images/branding/wyre-transparent.png" alt="Logo" />
                         </div>
                         <div class="footer-links button-container">
-                            <a href="#our-work">Our Work</a>
                             <a href="#plans">Plans & Pricing</a>
                             <a href="#services">Services</a>
+                            <!--<a href="#our-team">Our Team</a>-->
                             <a href="booking.html">Book a Call</a>
                         </div>
                     </div>
