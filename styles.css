@@ -241,7 +241,7 @@ nav.scrolled {
 
 .main-container {
     min-height: 100vh;
-    padding: 8em 4em;
+    padding: 6em 4em 0 4em;
 }
 
 .calendar-container, .column-container {
@@ -286,9 +286,132 @@ nav.scrolled {
     width: 100%;
     position: relative;
     align-items: center;
-    padding: 3em;
     border-radius: 20px;
 
+}
+
+/* === Hero Circular Slideshow Styles === */
+.carousel {
+    margin: 8em auto;
+
+    border: 1rem solid #bbb;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    transition: rotate 1s ease-in-out;
+}
+
+.slide {
+    
+  width: 8rem;
+  position: absolute;
+}
+
+
+
+.slide img {
+    border-radius: 10px;
+    box-shadow: 0px 0.5rem 1rem #00000042;
+  width: 100%;
+  object-fit: cover;
+  transform-origin: center center;
+  transition: transform 0.5s ease;
+}
+
+.slide.active img {
+  transform: scale(2) rotate(var(--img-rotation, 0deg));
+  z-index: 999;
+}
+
+
+.controls {
+    margin-top: 2rem;
+    display: flex;
+    gap: 1rem;
+    background-color: white;
+    border-radius: 20px;
+    padding: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+}
+
+.controls a {
+  padding: 0.5rem;
+  display: inline-block;
+  cursor: pointer;
+  border-radius: 50%;
+  background-color: #bbb;
+  transition: background-color 0.3s;
+}
+
+.controls a.active {
+  background-color: #121212;
+}
+
+.controls img {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+
+.scroll-arrow {
+display: none;
+  position: absolute;
+  top: calc(100vh - 8rem); /* push it to bottom of the container */
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 24px;
+  text-decoration: none;
+  color: #333;
+  animation: bounce 2s infinite;
+  z-index: 10; /* above images, if needed */
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(6px); }
+}
+.scroll-arrow:hover {
+  color: #000;
+  cursor: pointer;
+}
+.banner {
+    background-color: #171616;
+    width: 100%;
+    position: fixed;
+    z-index: 1000;
+    bottom: 0;
+    display: flex;
+    padding: 1.25rem 0;
+    flex-direction: row;
+    p {
+        color: white;
+        text-align: center;
+        margin: 0 1.5rem;        
+        width: 100%;
+        max-width: 1640px;
+    }
+}
+
+.banner.closing {
+    opacity: 0;
+    transform: translateY(100%);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    pointer-events: none;
+}
+
+.banner .close-btn {
+    color: #bbb;
+    cursor: pointer;
+    transition: color 0.2s ease;
+    margin-right: 1.5rem;
+}
+
+.banner .close-btn:hover {
+    color: #fff;
 }
 
 .calendar-container iframe {
@@ -300,6 +423,7 @@ nav.scrolled {
 }
 
 #booking-main-container {
+    padding: 8em 4em;
     text-align: center;
     max-width: none;
     flex-direction: column;
@@ -341,17 +465,11 @@ p {
     background: #efefef;
 }
 
-
 .process {
-    background: linear-gradient(45deg,#efe8dd, rgba(241, 200, 175, 0.4), #efefef, white );
-    backdrop-filter: blur(10px);
-    border-radius: 6em;
-    padding: 8em 4em;
-
+    padding: 8em 8em;    
 }
 
-
-.process h2, .plans h2 {
+.plans h2 {
     text-align: center;
     margin-bottom: 2rem;
 }
@@ -361,11 +479,63 @@ p {
 }
 
 .process img {
-    width: 75%;
-    align-self: center;
-    background-color: white;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+    width: 100%;
+    height: 225px;
+    object-fit: cover;
+    display: block;
 }
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.card {
+    box-shadow: 0px 1rem 3rem #0000005e;
+
+    background-color: #000;
+    color: #fff;
+    flex: 1 1 200px;
+    max-width: 340px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    
+}
+
+.card-content {
+    padding: 2rem;
+    background-color: #000;
+}
+
+.card-content h2 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    text-align: left;
+}
+
+.card-content p {
+    margin-top: 0.25rem;
+    color: #ccc;
+}
+
+.intro {
+    max-width: 400px;
+    text-align: left;
+}
+
+.intro h1 {
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+.intro p {
+    font-size: 1.5rem;
+    color: #555;
+}
+
 
 h2 {
     font-size: 3rem;
@@ -400,14 +570,6 @@ h4 {
 
 
 
-
-.our-work {
-    padding: 8em 0;
-    position: relative;
-    text-align: center;
-    max-width: 1640px;
-    margin: auto;
-}
 
 .plan-container {
     background-color: white;
@@ -645,10 +807,6 @@ hr {
     min-width: 540px;
 }
 
-.our-work .title {
-    text-align: left;
-    padding: 0 4rem;
-}
 
 .navigation {
     position: absolute;
@@ -688,30 +846,6 @@ hr {
 .prev:hover, .next:hover {
     background: #efe8dd;
     color: #121212;
-}
-.slider-container {
-    width: 100%;
-    overflow: hidden;
-    margin: 2rem auto;
-    position: relative;
-    padding: 1rem 4rem;
-}
-.slider {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-}
-.slider-item {
-    width: 33%;
-    flex-shrink: 0;
-    padding: 0 3rem 0 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 10px;
-}
-.slider-item img {
-    width: 100%;
-    border-radius: 15px;
 }
 
 
@@ -896,16 +1030,109 @@ footer .icon:hover {
 }
   
 
-  
 
 
+@media (min-width: 992px) {
+    .slide:nth-child(4) {
+  bottom: -6rem;
+}
+.slide:nth-child(1) {
+  left: -6rem;
+}
+.slide:nth-child(2) {
+  top: -6rem;
+}
+.slide:nth-child(3) {
+  right: -6rem;
+}
+    .scroll-arrow {
+        display: block;
+    }
+    .main-container {
+        padding: 8em 0 4em 8em 4em;
+    }
+    .process {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .intro {
+        flex: 1;
+        max-width: 40%;
+    }
+
+    .cards {
+        flex: 1;
+        max-width: 58%;
+        justify-content: flex-end;
+    }
+    .controls {
+        position: absolute;
+        right: -1rem;
+        transform: rotate(90deg);
+
+    }
+    .carousel {
+        position: absolute;
+        left: 50%;
+        width: 48rem;
+        height: 48rem;
+        
+    }
+
+    .hero-image {
+        max-height: 48rem; 
+        overflow: hidden;
+    }
+    .slide {
+        width: 16rem;
+    }
+}
+
+@media (max-width: 992px) {
+
+    .hero-image {
+        display: inline-block;
+        overflow: hidden;
+        max-height: 20rem;
+        
+    }
+    .carousel {
+        width: 480px;
+        height: 480px;
+    }
+    .controls {
+        position: absolute;
+        top: 6rem;
+        transform: rotate(90deg);
+
+
+    }
+}
+
+@media (max-width: 992px) and (min-width: 480px) {
+    .slide:nth-child(3) {
+        bottom: -6rem;
+    }
+    .slide:nth-child(4) {
+        left: -6rem;
+    }
+    .slide:nth-child(1) {
+        top: -6rem;
+    }
+    .slide:nth-child(2) {
+        right: -6rem;
+    }
+    .controls {
+        transform: rotate(90deg);
+        right: -1rem;
+    }
+}
 
 @media (max-width: 1240px) and (min-width: 992px) {
     .plan-graphic {
         display: none;
-    }
-    .slider-item {
-        width: 50%;
     }
 
 }
@@ -968,6 +1195,10 @@ footer .icon:hover {
         padding: 2em 1em;
     }
 
+    .main-container {
+        padding: 2em 1em 0 1em;
+    }
+
     #booking-main-container {
         padding: 5em 1em;
 
@@ -997,10 +1228,6 @@ footer .icon:hover {
         min-width:auto;
     }
 
-    .our-work .column {
-        align-items: center !important;
-
-    }
     .plan-container {
         width: 80%;
 
@@ -1023,23 +1250,27 @@ footer .icon:hover {
     .plan-graphic {
         display: none;
     }
-    .slider-item {
-        width: 100%;
-    }
+
     .navigation {
         position: static;
         text-align: center;
         margin-top: 20px;
     }
 
-    .slider-item {
-        padding: 1rem;
-    }
     
 }
 
 @media (max-width: 480px) {
-
+    .carousel {
+        width: 280px;
+        height: 280px;
+    }
+    .slide {
+        width: 6rem;
+        img {
+            border-radius: 6px;
+        }
+    }
     .hero-text {
         margin-top: 2em;
         text-align: center;
@@ -1076,22 +1307,41 @@ footer .icon:hover {
         flex-direction: column;
         padding: 1em 0.5em;
     }
+    .main-container {
+        padding: 1em 0.5em 0 0.5em;
+    }
     .plan-switch {
         flex-direction: column;
     }
 
-    .plans, .process, .detailed-plans {        
+    .plans, .detailed-plans {        
         padding: 6em 0.5em;
     }
     
     .process {
-        border-radius: 4em;
+        padding: 6em 1em;
     }
     .recommend {
         font-size: 0.8em;
         padding: 0.75em;
     }
-    .our-work .title {
-        padding: 0 1rem;
+    .slide:nth-child(3) {
+        bottom: -3rem;
+    }
+    .slide:nth-child(4) {
+        left: -3rem;
+    }
+    .slide:nth-child(1) {
+        top: -3rem;
+    }
+    .slide:nth-child(2) {
+        right: -3rem;
+    }
+    .controls {
+        top: 0;
+        margin: 0 27.5%;
+        
+        justify-content: center;
+        transform: rotate(0deg)
     }
 }
