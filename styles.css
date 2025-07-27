@@ -1107,8 +1107,20 @@ footer .icon:hover {
         top: 6rem;
         transform: rotate(90deg);
         scale: 0.8;
-
-
+    }
+    
+    .intro {
+        flex: 1;
+        width: 100%;
+        max-width: max-content;
+        margin-bottom: 1rem; 
+        h2 {
+            padding: 1rem;
+        }
+        p {
+            padding: 0.5rem;
+            font-size: 1.1rem;
+        }
     }
 }
 
@@ -1257,6 +1269,7 @@ footer .icon:hover {
         text-align: center;
         margin-top: 20px;
     }
+    
 
     
 }
