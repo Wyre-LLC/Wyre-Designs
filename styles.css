@@ -1095,7 +1095,7 @@ footer .icon:hover {
     .hero-image {
         display: inline-block;
         overflow: hidden;
-        max-height: 20rem;
+        max-height: 18rem;
         
     }
     .frame {
@@ -1282,8 +1282,8 @@ footer .icon:hover {
         min-height: none !important;
     }
     .carousel {
-        width: 280px;
-        height: 280px;
+        width: 320px;
+        height: 320px;
     }
     .slide {
         width: 8rem;
