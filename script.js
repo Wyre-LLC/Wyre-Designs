@@ -1,6 +1,4 @@
-const slider = document.querySelector(".slider");
 const planGraphic = document.querySelector(".plan-graphic");
-const totalSlides = document.querySelectorAll(".slider-item").length;
 let index = 0;
 let totalPrice = 0;
 
@@ -14,7 +12,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const elements = document.querySelectorAll('.fade-slide');
     const navLinks = document.querySelectorAll(".items-nav a");
     const sections = [
-        document.getElementById("our-work"),
         document.getElementById("plans"),
         document.getElementById("services")
     ];
@@ -95,36 +92,6 @@ function changeContent(index, element) {
     document.getElementById('content-' + index).classList.add('active');
 }
 
-function getSlidesPerView() {
-    if (window.innerWidth >= 1024) return 3;
-    if (window.innerWidth >= 768) return 2;
-    return 1;
-}
-
-function updateSlide() {
-    const slidesPerView = getSlidesPerView();
-    slider.style.transform = `translateX(-${index * (100 / slidesPerView)}%)`;
-}
-
-function nextSlide() {
-    const slidesPerView = getSlidesPerView();
-    if (index < totalSlides - slidesPerView) {
-        index++;
-    } else {
-        index = 0;
-    }
-    updateSlide();
-}
-
-function prevSlide() {
-    const slidesPerView = getSlidesPerView();
-    if (index > 0) {
-        index--;
-    } else {
-        index = totalSlides - slidesPerView;
-    }
-    updateSlide();
-}
 
 function updatePrice() {
     totalPrice = 0;
@@ -154,3 +121,71 @@ function toggleDropdown(dropdownId, arrowId) {
 }
 
 updatePrice();
+
+
+ function closeBanner() {
+    const banner = document.getElementById('summer-banner');
+    banner.classList.add('closing');
+    setTimeout(() => {
+      banner.style.display = 'none';
+    }, 400); 
+  }
+
+const carousel = document.querySelector(".carousel");
+const slides = document.querySelectorAll(".slide");
+const controlLinks = document.querySelectorAll(".controls a");
+
+let currentIndex = 0; // starts at first slide
+let imageRotation = 0;
+let intervalId;
+
+function rotateImages(indexDiff = 1) {
+  imageRotation += indexDiff * 90;
+
+  slides.forEach((slide) => {
+    const img = slide.querySelector("img");
+
+    img.style.setProperty('--img-rotation', `${imageRotation}deg`);
+
+    if (slide.classList.contains("active")) {
+      img.style.transform = `scale(2) rotate(${imageRotation}deg)`;
+    } else {
+      img.style.transform = `rotate(${imageRotation}deg)`;
+    }
+  });
+}
+
+function setActiveSlide(newIndex) {
+  const indexDiff = newIndex - currentIndex;
+
+  currentIndex = newIndex;
+  carousel.style.rotate = `-${currentIndex * 90}deg`;
+
+  document.querySelector(".slide.active").classList.remove("active");
+  slides[currentIndex].classList.add("active");
+
+  document.querySelector(".controls a.active").classList.remove("active");
+  controlLinks[currentIndex].classList.add("active");
+
+  rotateImages(indexDiff);
+}
+
+function startInterval() {
+  intervalId = setInterval(() => {
+    const nextIndex = (currentIndex + 1) % slides.length;
+    setActiveSlide(nextIndex);
+  }, 4000);
+}
+
+startInterval();
+
+controlLinks.forEach((control, index) => {
+  control.addEventListener("click", () => {
+    clearInterval(intervalId);
+    setActiveSlide(index);
+    startInterval();
+  });
+});
+
+carousel.addEventListener("mouseenter", () => clearInterval(intervalId));
+carousel.addEventListener("mouseleave", () => startInterval());
