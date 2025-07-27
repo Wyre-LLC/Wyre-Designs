@@ -1106,6 +1106,7 @@ footer .icon:hover {
         position: absolute;
         top: 6rem;
         transform: rotate(90deg);
+        scale: 0.8;
 
 
     }
@@ -1338,10 +1339,8 @@ footer .icon:hover {
         right: -3rem;
     }
     .controls {
-        top: 0;
-        margin: 0 27.5%;
-        
-        justify-content: center;
-        transform: rotate(0deg)
+        transform: rotate(90deg);
+        right: -2rem;
     }
+
 }
